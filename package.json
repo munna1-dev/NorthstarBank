@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "vercel-build": "node scripts/build-config.mjs"
+  }
+}
