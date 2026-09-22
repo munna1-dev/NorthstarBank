@@ -149,19 +149,54 @@
   }
 
   function setupTransactionFilters() {
-    const mock = getMock();
+    const supabaseState = window.NorthstarSupabase;
+    const supabase = supabaseState && supabaseState.client;
 
     const search = document.querySelector("#transaction-search");
     const dateFilter = document.querySelector("#transaction-date");
     const categoryFilter = document.querySelector("#transaction-category");
     const statusFilter = document.querySelector("#transaction-status");
 
-    if (!mock || !search || !dateFilter || !categoryFilter || !statusFilter) {
+    if (!supabase || !search || !dateFilter || !categoryFilter || !statusFilter) {
       return;
     }
 
+    let loadedTransactions = [];
+
+    async function loadTransactions() {
+      const result = await supabase.auth.getUser();
+      const user = result && result.data && result.data.user;
+
+      if (result.error || !user) return;
+
+      const query = await supabase
+        .from("transactions")
+        .select("id, transaction_type, amount, description, category, transaction_date")
+        .eq("user_id", user.id)
+        .order("transaction_date", { ascending: false });
+
+      if (query.error) {
+        console.error("[NorthstarBank] Failed to load transactions:", query.error);
+        return;
+      }
+
+      loadedTransactions = (query.data || []).map(function (txn) {
+        return {
+          id: txn.id,
+          date: txn.transaction_date,
+          description: txn.description || "Transaction",
+          category: txn.category || "Other",
+          type: txn.transaction_type === "debit" ? "Debit" : "Credit",
+          amount: Number(txn.amount || 0),
+          status: "Completed"
+        };
+      });
+
+      applyFilters();
+    }
+
     function applyFilters() {
-      let transactions = mock.transactions.slice();
+      let transactions = loadedTransactions.slice();
 
       const searchValue = search.value.trim().toLowerCase();
       const dateValue = dateFilter.value;
@@ -221,7 +256,7 @@
     categoryFilter.addEventListener("change", applyFilters);
     statusFilter.addEventListener("change", applyFilters);
 
-    applyFilters();
+    loadTransactions();
   }
 
   function setupTransferForm() {
@@ -739,12 +774,6 @@
 
   function init() {
     renderAccounts();
-
-    const mock = getMock();
-
-    if (mock) {
-      renderTransactions(mock.transactions);
-    }
 
     setupTransactionFilters();
     setupTransferForm();
