@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Northstar Bank customer profile">
+  <title>Profile | Northstar Bank</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/customer.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrapper">
+    <a class="brand" href="dashboard.html" aria-label="Northstar Bank customer portal">
+      <span class="brand-mark">N</span>
+      <span>Northstar Bank</span>
+    </a>
+
+    <div class="nav-actions">
+      <span class="user-label">Alex Morgan</span>
+      <button class="btn btn-outline" type="button" data-logout>Sign out</button>
+    </div>
+  </div>
+</header>
+
+<div class="portal-layout">
+
+  <aside class="portal-sidebar" aria-label="Customer portal navigation">
+    <h2>Customer Portal</h2>
+
+    <nav class="portal-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="accounts.html">Accounts</a>
+      <a href="transactions.html">Transactions</a>
+      <a href="transfers.html">Transfers</a>
+      <a href="beneficiaries.html">Beneficiaries</a>
+      <a href="bills.html">Bill Payments</a>
+      <a href="cards.html">Cards</a>
+      <a href="loans.html">Loans</a>
+      <a href="statements.html">Statements</a>
+      <a class="active" href="profile.html">Profile</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+  </aside>
+
+  <main class="portal-main">
+
+    <header class="portal-header">
+      <div>
+        <h1>Profile</h1>
+        <p>Review and update fictional customer profile information.</p>
+      </div>
+    </header>
+
+    <section class="card">
+
+      <span class="eyebrow">Personal information</span>
+      <h2>Customer profile</h2>
+
+      <form id="profile-form" class="form-grid">
+
+        <div class="form-group">
+          <label for="profile-name">Full name</label>
+          <input
+            id="profile-name"
+            name="name"
+            type="text"
+            value="Alex Morgan"
+            autocomplete="name"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="profile-email">Email address</label>
+          <input
+            id="profile-email"
+            name="email"
+            type="email"
+            value="alex@example.test"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="profile-phone">Phone number</label>
+          <input
+            id="profile-phone"
+            name="phone"
+            type="tel"
+            value="+1 555 010 2840"
+            autocomplete="tel"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="profile-customer-id">Customer ID</label>
+          <input
+            id="profile-customer-id"
+            type="text"
+            value="CUS-100284"
+            readonly
+          >
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">
+            Save demo profile
+          </button>
+        </div>
+
+      </form>
+
+    </section>
+
+    <section class="section">
+
+      <div class="card">
+
+        <span class="eyebrow">Contact preferences</span>
+        <h2>Communication preferences</h2>
+
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="profile-email-alerts">Email notifications</label>
+            <select id="profile-email-alerts">
+              <option>Enabled</option>
+              <option>Disabled</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="profile-sms-alerts">SMS notifications</label>
+            <select id="profile-sms-alerts">
+              <option>Enabled</option>
+              <option>Disabled</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="profile-paperless">Paperless statements</label>
+            <select id="profile-paperless">
+              <option>Enabled</option>
+              <option>Disabled</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-outline" type="button" id="save-preferences">
+            Save demo preferences
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section">
+
+      <div class="card">
+        <span class="eyebrow">Profile security</span>
+        <h2>Account protection</h2>
+
+        <ul class="feature-list">
+          <li>Only fictional customer information is displayed.</li>
+          <li>Profile changes are simulated locally in the frontend demo.</li>
+          <li>No real identity verification or account changes are performed.</li>
+          <li>Production systems require authenticated backend authorization.</li>
+        </ul>
+      </div>
+
+    </section>
+
+  </main>
+</div>
+
+<script src="../assets/js/supabase-client.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/customer.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Northstar Bank Management - Transfers</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/management.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="dashboard.html">
+    Northstar Bank Management
+  </a>
+
+  <nav aria-label="Management navigation">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="customers.html">Customers</a>
+    <a href="accounts.html">Accounts</a>
+    <a href="transactions.html">Transactions</a>
+    <a href="transfers.html" aria-current="page">Transfers</a>
+    <a href="cards.html">Cards</a>
+    <a href="loans.html">Loans</a>
+    <a href="support.html">Support</a>
+    <a href="reports.html">Reports</a>
+    <a href="audit-log.html">Audit Log</a>
+    <a href="settings.html">Settings</a>
+  </nav>
+
+  <button class="btn btn-outline" type="button" data-logout>
+    Sign out
+  </button>
+</header>
+
+<main class="page-shell">
+
+  <section class="page-heading">
+    <span class="eyebrow">Management Portal</span>
+    <h1>Transfers</h1>
+    <p>Review and manage transfer activity across Northstar Bank.</p>
+  </section>
+
+  <section class="card">
+
+    <div class="section-header">
+      <div>
+        <h2>Transfer Directory</h2>
+        <p>Search, filter, review, and update fictional transfer records.</p>
+      </div>
+
+      <button
+        class="btn btn-outline"
+        type="button"
+        data-export-management="transfers"
+      >
+        Export CSV
+      </button>
+    </div>
+
+    <div class="form-grid">
+
+      <div class="form-group">
+        <label for="management-transfer-search">Search</label>
+        <input
+          id="management-transfer-search"
+          type="search"
+          placeholder="Search transfer, customer, beneficiary..."
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="management-transfer-status">Status</label>
+        <select id="management-transfer-status">
+          <option value="">All statuses</option>
+          <option value="Pending">Pending</option>
+          <option value="Completed">Completed</option>
+          <option value="Failed">Failed</option>
+          <option value="Cancelled">Cancelled</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="management-transfer-type">Type</label>
+        <select id="management-transfer-type">
+          <option value="">All types</option>
+          <option value="Internal">Internal</option>
+          <option value="External">External</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="management-transfer-sort">Sort</label>
+        <select id="management-transfer-sort">
+          <option value="date-desc">Newest first</option>
+          <option value="date-asc">Oldest first</option>
+          <option value="amount-desc">Largest amount</option>
+          <option value="amount-asc">Smallest amount</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Transfer</th>
+            <th>Customer</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody id="management-transfer-list"></tbody>
+      </table>
+    </div>
+
+    <p id="management-transfer-empty" hidden>
+      No transfers match the selected filters.
+    </p>
+
+  </section>
+
+</main>
+
+<script src="../assets/js/supabase-client.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/management.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Northstar Bank Management - Cards</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/management.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="dashboard.html">
+    Northstar Bank Management
+  </a>
+
+  <nav aria-label="Management navigation">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="customers.html">Customers</a>
+    <a href="accounts.html">Accounts</a>
+    <a href="transactions.html">Transactions</a>
+    <a href="transfers.html">Transfers</a>
+    <a href="cards.html" aria-current="page">Cards</a>
+    <a href="loans.html">Loans</a>
+    <a href="support.html">Support</a>
+    <a href="reports.html">Reports</a>
+    <a href="audit-log.html">Audit Log</a>
+    <a href="settings.html">Settings</a>
+  </nav>
+
+  <button class="btn btn-outline" type="button" data-logout>
+    Sign out
+  </button>
+</header>
+
+<main class="page-shell">
+
+  <section class="page-heading">
+    <span class="eyebrow">Management Portal</span>
+    <h1>Cards</h1>
+    <p>Review card accounts and manage card status.</p>
+  </section>
+
+  <section class="card">
+
+    <div class="section-header">
+      <div>
+        <h2>Card Directory</h2>
+        <p>Search and filter fictional card records.</p>
+      </div>
+
+      <button
+        class="btn btn-outline"
+        type="button"
+        data-export-management="cards"
+      >
+        Export CSV
+      </button>
+    </div>
+
+    <div class="form-grid">
+
+      <div class="form-group">
+        <label for="management-card-search">Search</label>
+        <input
+          id="management-card-search"
+          type="search"
+          placeholder="Search card, customer, number..."
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="management-card-status">Status</label>
+        <select id="management-card-status">
+          <option value="">All statuses</option>
+          <option value="Active">Active</option>
+          <option value="Blocked">Blocked</option>
+          <option value="Suspended">Suspended</option>
+          <option value="Expired">Expired</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="management-card-type">Type</label>
+        <select id="management-card-type">
+          <option value="">All types</option>
+          <option value="Debit">Debit</option>
+          <option value="Credit">Credit</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="management-card-sort">Sort</label>
+        <select id="management-card-sort">
+          <option value="name-asc">Name A-Z</option>
+          <option value="name-desc">Name Z-A</option>
+          <option value="available-desc">Highest available</option>
+          <option value="available-asc">Lowest available</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Card</th>
+            <th>Customer</th>
+            <th>Number</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Limit</th>
+            <th>Available</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody id="management-card-list"></tbody>
+      </table>
+    </div>
+
+    <p id="management-card-empty" hidden>
+      No cards match the selected filters.
+    </p>
+
+  </section>
+
+</main>
+
+<script src="../assets/js/supabase-client.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/management.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Northstar Bank customer loans">
+  <title>Loans | Northstar Bank</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/customer.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrapper">
+    <a class="brand" href="dashboard.html" aria-label="Northstar Bank customer portal">
+      <span class="brand-mark">N</span>
+      <span>Northstar Bank</span>
+    </a>
+
+    <div class="nav-actions">
+      <span class="user-label">Alex Morgan</span>
+      <button class="btn btn-outline" type="button" data-logout>Sign out</button>
+    </div>
+  </div>
+</header>
+
+<div class="portal-layout">
+
+  <aside class="portal-sidebar" aria-label="Customer portal navigation">
+    <h2>Customer Portal</h2>
+
+    <nav class="portal-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="accounts.html">Accounts</a>
+      <a href="transactions.html">Transactions</a>
+      <a href="transfers.html">Transfers</a>
+      <a href="beneficiaries.html">Beneficiaries</a>
+      <a href="bills.html">Bill Payments</a>
+      <a href="cards.html">Cards</a>
+      <a class="active" href="loans.html">Loans</a>
+      <a href="statements.html">Statements</a>
+      <a href="profile.html">Profile</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+  </aside>
+
+  <main class="portal-main">
+
+    <header class="portal-header">
+      <div>
+        <h1>Loans</h1>
+        <p>Review your fictional loan and explore the demo loan calculator.</p>
+      </div>
+    </header>
+
+    <section class="card-grid">
+
+      <article class="card">
+        <span class="eyebrow">Active loan</span>
+        <h2>Personal Loan</h2>
+        <p>Loan ID: LOAN-001</p>
+
+        <div class="metric-grid">
+          <div class="metric">
+            <span class="metric-label">Original principal</span>
+            <strong>$12,000.00</strong>
+          </div>
+
+          <div class="metric">
+            <span class="metric-label">Remaining balance</span>
+            <strong>$8,450.25</strong>
+          </div>
+
+          <div class="metric">
+            <span class="metric-label">Interest rate</span>
+            <strong>7.25%</strong>
+          </div>
+
+          <div class="metric">
+            <span class="metric-label">Status</span>
+            <strong>Active</strong>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-outline" type="button" id="loan-payment-demo">
+            Make demo payment
+          </button>
+          <button
+            class="btn btn-outline"
+            type="button"
+            data-loan-action="details"
+          >
+            View loan details
+          </button>
+        </div>
+      </article>
+
+    </section>
+
+    <section class="section">
+
+      <div class="card">
+
+        <span class="eyebrow">Loan calculator</span>
+        <h2>Estimate a monthly payment</h2>
+        <p class="muted">
+          This calculator is illustrative only and does not represent an offer,
+          approval decision, or real lending terms.
+        </p>
+
+        <form id="loan-calculator" class="form-grid">
+
+          <div class="form-group">
+            <label for="loan-principal">Loan amount</label>
+            <input
+              id="loan-principal"
+              type="number"
+              min="1"
+              step="100"
+              value="12000"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="loan-rate">Annual interest rate (%)</label>
+            <input
+              id="loan-rate"
+              type="number"
+              min="0"
+              step="0.01"
+              value="7.25"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="loan-years">Term (years)</label>
+            <input
+              id="loan-years"
+              type="number"
+              min="1"
+              max="40"
+              step="1"
+              value="3"
+              required
+            >
+          </div>
+
+          <div class="loan-result">
+            <span class="metric-label">Estimated monthly payment</span>
+            <strong id="loan-result">$0.00</strong>
+          </div>
+
+        </form>
+
+      </div>
+
+    </section>
+
+    <section class="section">
+
+      <div class="card">
+        <span class="eyebrow">Loan services</span>
+        <h2>Explore loan options</h2>
+
+        <div class="card-grid">
+
+          <article class="card">
+            <h3>Personal lending</h3>
+            <p>Explore a fictional personal lending scenario for the demo.</p>
+            <button
+              class="btn btn-outline"
+              type="button"
+              data-loan-action="learn"
+              data-loan-product="Personal lending"
+            >
+              Learn more
+            </button>
+          </article>
+
+          <article class="card">
+            <h3>Auto lending</h3>
+            <p>Estimate a fictional vehicle loan payment.</p>
+            <button
+              class="btn btn-outline"
+              type="button"
+              data-loan-action="learn"
+              data-loan-product="Auto lending"
+            >
+              Learn more
+            </button>
+          </article>
+
+          <article class="card">
+            <h3>Home lending</h3>
+            <p>Review a fictional home financing scenario.</p>
+            <button
+              class="btn btn-outline"
+              type="button"
+              data-loan-action="learn"
+              data-loan-product="Home lending"
+            >
+              Learn more
+            </button>
+          </article>
+
+        </div>
+      </div>
+
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <span class="eyebrow">Demo notice</span>
+        <h2>Fictional lending information</h2>
+        <p>
+          Loan balances, rates, payment estimates, and loan products on this
+          page are fictional. The calculator is for frontend demonstration
+          purposes only and does not perform underwriting or create a real
+          credit application.
+        </p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="../assets/js/supabase-client.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/customer.js"></script>
+
+</body>
+</html>

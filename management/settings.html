@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Northstar Bank Management - Settings</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/management.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="dashboard.html">
+    Northstar Bank Management
+  </a>
+
+  <nav aria-label="Management navigation">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="customers.html">Customers</a>
+    <a href="accounts.html">Accounts</a>
+    <a href="transactions.html">Transactions</a>
+    <a href="transfers.html">Transfers</a>
+    <a href="cards.html">Cards</a>
+    <a href="loans.html">Loans</a>
+    <a href="support.html">Support</a>
+    <a href="reports.html">Reports</a>
+    <a href="audit-log.html">Audit Log</a>
+    <a href="settings.html" aria-current="page">Settings</a>
+  </nav>
+
+  <button class="btn btn-outline" type="button" data-logout>
+    Sign out
+  </button>
+</header>
+
+<main class="page-shell">
+
+  <section class="page-heading">
+    <span class="eyebrow">Management Portal</span>
+    <h1>Settings</h1>
+    <p>
+      Configure preferences for the Northstar Bank management portal.
+    </p>
+  </section>
+
+  <section class="card">
+    <div class="page-actions">
+      <button
+        class="btn btn-outline"
+        type="button"
+        data-refresh-settings
+      >
+        Refresh
+      </button>
+
+      <button
+        class="btn btn-outline"
+        type="button"
+        data-reset-settings
+      >
+        Reset defaults
+      </button>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="page-heading">
+      <span class="eyebrow">Security</span>
+      <h2>Security settings</h2>
+    </div>
+
+    <form id="management-security-form">
+
+      <label>
+        Session timeout
+        <select id="management-session-timeout">
+          <option value="15">15 minutes</option>
+          <option value="30">30 minutes</option>
+          <option value="60">60 minutes</option>
+          <option value="120">120 minutes</option>
+        </select>
+      </label>
+
+      <label>
+        <input
+          id="management-two-factor"
+          type="checkbox"
+        >
+        Require two-factor authentication for management access
+      </label>
+
+      <label>
+        <input
+          id="management-login-alerts"
+          type="checkbox"
+        >
+        Send alerts for management login attempts
+      </label>
+
+      <button
+        class="btn btn-primary"
+        type="submit"
+      >
+        Save security settings
+      </button>
+
+    </form>
+  </section>
+
+  <section class="card">
+    <div class="page-heading">
+      <span class="eyebrow">Notifications</span>
+      <h2>Notification settings</h2>
+    </div>
+
+    <form id="management-notification-form">
+
+      <label>
+        <input
+          id="management-transfer-alerts"
+          type="checkbox"
+        >
+        Transfer alerts
+      </label>
+
+      <label>
+        <input
+          id="management-support-alerts"
+          type="checkbox"
+        >
+        Support case alerts
+      </label>
+
+      <label>
+        <input
+          id="management-security-alerts"
+          type="checkbox"
+        >
+        Security alerts
+      </label>
+
+      <label>
+        <input
+          id="management-report-alerts"
+          type="checkbox"
+        >
+        Report generation alerts
+      </label>
+
+      <button
+        class="btn btn-primary"
+        type="submit"
+      >
+        Save notification settings
+      </button>
+
+    </form>
+  </section>
+
+  <section class="card">
+    <div class="page-heading">
+      <span class="eyebrow">Display</span>
+      <h2>Display preferences</h2>
+    </div>
+
+    <form id="management-display-form">
+
+      <label>
+        Currency display
+        <select id="management-currency">
+          <option value="USD">USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="GBP">GBP (£)</option>
+        </select>
+      </label>
+
+      <label>
+        Date format
+        <select id="management-date-format">
+          <option value="MMM D, YYYY">MMM D, YYYY</option>
+          <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+          <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+        </select>
+      </label>
+
+      <label>
+        Default table page size
+        <select id="management-page-size">
+          <option value="10">10 rows</option>
+          <option value="25">25 rows</option>
+          <option value="50">50 rows</option>
+          <option value="100">100 rows</option>
+        </select>
+      </label>
+
+      <button
+        class="btn btn-primary"
+        type="submit"
+      >
+        Save display settings
+      </button>
+
+    </form>
+  </section>
+
+  <section class="card">
+    <div class="page-heading">
+      <span class="eyebrow">Environment</span>
+      <h2>Demo environment</h2>
+    </div>
+
+    <p class="notice">
+      These settings are stored locally in this browser while the application
+      is running in demo mode. They will be moved to Supabase-backed
+      management settings during the database integration phase.
+    </p>
+
+    <p>
+      Current storage key:
+      <code>northstarManagementSettings</code>
+    </p>
+  </section>
+
+</main>
+
+<script src="../assets/js/supabase-client.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/management.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Northstar Bank customer cards">
+  <title>Cards | Northstar Bank</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/customer.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrapper">
+    <a class="brand" href="dashboard.html" aria-label="Northstar Bank customer portal">
+      <span class="brand-mark">N</span>
+      <span>Northstar Bank</span>
+    </a>
+
+    <div class="nav-actions">
+      <span class="user-label">Alex Morgan</span>
+      <button class="btn btn-outline" type="button" data-logout>Sign out</button>
+    </div>
+  </div>
+</header>
+
+<div class="portal-layout">
+
+  <aside class="portal-sidebar" aria-label="Customer portal navigation">
+    <h2>Customer Portal</h2>
+
+    <nav class="portal-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="accounts.html">Accounts</a>
+      <a href="transactions.html">Transactions</a>
+      <a href="transfers.html">Transfers</a>
+      <a href="beneficiaries.html">Beneficiaries</a>
+      <a href="bills.html">Bill Payments</a>
+      <a class="active" href="cards.html">Cards</a>
+      <a href="loans.html">Loans</a>
+      <a href="statements.html">Statements</a>
+      <a href="profile.html">Profile</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+  </aside>
+
+  <main class="portal-main">
+
+    <header class="portal-header">
+      <div>
+        <h1>Cards</h1>
+        <p>Review your fictional debit and credit card information.</p>
+      </div>
+    </header>
+
+    <section class="card-grid">
+
+      <article class="card">
+        <span class="eyebrow">Debit card</span>
+        <h2>Northstar Everyday Card</h2>
+
+        <div class="account-number">•••• •••• •••• 4821</div>
+
+        <p>
+          <strong>Status:</strong>
+          <span class="status status-success">Active</span>
+        </p>
+
+        <div class="metric-grid">
+          <div class="metric">
+            <span class="metric-label">Daily limit</span>
+            <strong>$5,000.00</strong>
+          </div>
+
+          <div class="metric">
+            <span class="metric-label">Available</span>
+            <strong>$3,925.50</strong>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button
+            class="btn btn-outline"
+            type="button"
+            data-card-action="freeze"
+            data-card-name="Northstar Everyday Card"
+          >
+            Freeze card
+          </button>
+          <button
+            class="btn btn-outline"
+            type="button"
+            data-card-action="details"
+            data-card-name="Northstar Everyday Card"
+          >
+            View details
+          </button>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="eyebrow">Credit card</span>
+        <h2>Northstar Rewards Card</h2>
+
+        <div class="account-number">•••• •••• •••• 7364</div>
+
+        <p>
+          <strong>Status:</strong>
+          <span class="status status-success">Active</span>
+        </p>
+
+        <div class="metric-grid">
+          <div class="metric">
+            <span class="metric-label">Credit limit</span>
+            <strong>$8,000.00</strong>
+          </div>
+
+          <div class="metric">
+            <span class="metric-label">Available credit</span>
+            <strong>$6,420.00</strong>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button
+            class="btn btn-outline"
+            type="button"
+            data-card-action="freeze"
+            data-card-name="Northstar Rewards Card"
+          >
+            Freeze card
+          </button>
+          <button
+            class="btn btn-outline"
+            type="button"
+            data-card-action="details"
+            data-card-name="Northstar Rewards Card"
+          >
+            View details
+          </button>
+        </div>
+      </article>
+
+    </section>
+
+    <section class="section">
+
+      <div class="card">
+        <span class="eyebrow">Digital controls</span>
+        <h2>Card controls</h2>
+
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="online-purchases">Online purchases</label>
+            <select id="online-purchases">
+              <option>Enabled</option>
+              <option>Disabled</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="international">International purchases</label>
+            <select id="international">
+              <option>Enabled</option>
+              <option>Disabled</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="contactless">Contactless payments</label>
+            <select id="contactless">
+              <option>Enabled</option>
+              <option>Disabled</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="cash-withdrawals">Cash withdrawals</label>
+            <select id="cash-withdrawals">
+              <option>Enabled</option>
+              <option>Disabled</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-primary" type="button" id="save-card-controls">
+            Save demo controls
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="section">
+
+      <div class="card">
+        <span class="eyebrow">Card security</span>
+        <h2>Protect your card information</h2>
+        <ul class="feature-list">
+          <li>Only fictional card numbers are displayed.</li>
+          <li>No real card authorization network is connected.</li>
+          <li>Card controls on this page are demonstration controls.</li>
+          <li>Production card management requires secure backend authorization and monitoring.</li>
+        </ul>
+      </div>
+
+    </section>
+
+  </main>
+</div>
+
+<script src="../assets/js/supabase-client.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/customer.js"></script>
+
+</body>
+</html>

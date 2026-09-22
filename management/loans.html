@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Northstar Bank Management - Loans</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/management.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="dashboard.html">
+    Northstar Bank Management
+  </a>
+
+  <nav aria-label="Management navigation">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="customers.html">Customers</a>
+    <a href="accounts.html">Accounts</a>
+    <a href="transactions.html">Transactions</a>
+    <a href="transfers.html">Transfers</a>
+    <a href="cards.html">Cards</a>
+    <a href="loans.html" aria-current="page">Loans</a>
+    <a href="support.html">Support</a>
+    <a href="reports.html">Reports</a>
+    <a href="audit-log.html">Audit Log</a>
+    <a href="settings.html">Settings</a>
+  </nav>
+
+  <button class="btn btn-outline" type="button" data-logout>
+    Sign out
+  </button>
+</header>
+
+<main class="page-shell">
+  <section class="page-heading">
+    <span class="eyebrow">Management Portal</span>
+    <h1>Loans</h1>
+    <p>Review and manage fictional loan records across Northstar Bank.</p>
+  </section>
+
+  <section class="card">
+    <div class="section-heading">
+      <div>
+        <h2>Loan portfolio</h2>
+        <p>Search, filter, review, and export demo loan records.</p>
+      </div>
+
+      <button
+        class="btn btn-outline"
+        type="button"
+        data-export-management="loans"
+      >
+        Export CSV
+      </button>
+    </div>
+
+    <div class="filter-grid">
+      <div class="form-group">
+        <label for="management-loan-search">Search</label>
+        <input
+          id="management-loan-search"
+          type="search"
+          placeholder="Search loan, customer, or type..."
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="management-loan-status">Status</label>
+        <select id="management-loan-status">
+          <option value="">All statuses</option>
+          <option value="Active">Active</option>
+          <option value="Pending">Pending</option>
+          <option value="Paid">Paid</option>
+          <option value="Closed">Closed</option>
+          <option value="Rejected">Rejected</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="management-loan-type">Loan type</label>
+        <select id="management-loan-type">
+          <option value="">All types</option>
+          <option value="Personal Loan">Personal Loan</option>
+          <option value="Auto Loan">Auto Loan</option>
+          <option value="Mortgage">Mortgage</option>
+          <option value="Home Loan">Home Loan</option>
+          <option value="Student Loan">Student Loan</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="management-loan-sort">Sort</label>
+        <select id="management-loan-sort">
+          <option value="balance-desc">Balance: high to low</option>
+          <option value="balance-asc">Balance: low to high</option>
+          <option value="principal-desc">Principal: high to low</option>
+          <option value="principal-asc">Principal: low to high</option>
+          <option value="rate-desc">Rate: high to low</option>
+          <option value="rate-asc">Rate: low to high</option>
+          <option value="type-asc">Type: A-Z</option>
+          <option value="type-desc">Type: Z-A</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Loan ID</th>
+            <th>Customer</th>
+            <th>Type</th>
+            <th>Principal</th>
+            <th>Balance</th>
+            <th>Rate</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody id="management-loan-list"></tbody>
+      </table>
+    </div>
+
+    <p id="management-loan-empty" hidden>
+      No loans match the selected filters.
+    </p>
+  </section>
+</main>
+
+<script src="../assets/js/supabase-client.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/management.js"></script>
+
+</body>
+</html>

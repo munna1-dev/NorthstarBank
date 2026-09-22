@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Northstar Bank support center">
+  <title>Support | Northstar Bank</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/public.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a class="brand" href="../index.html" aria-label="Northstar Bank home">
+        <span class="brand-mark">N</span>
+        <span>Northstar Bank</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="accounts.html">Accounts</a>
+        <a href="cards.html">Cards</a>
+        <a href="loans.html">Loans</a>
+        <a class="active" href="support.html">Support</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-outline" href="login.html">Sign in</a>
+        <a class="btn btn-primary" href="register.html">Open an account</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Help center</span>
+        <h1>How can we help?</h1>
+        <p>Find answers to common questions or contact the fictional Northstar Bank support team.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card-grid">
+
+        <article class="card">
+          <span class="card-icon">?</span>
+          <h2>Frequently asked questions</h2>
+          <p>Browse common questions about accounts, cards, transfers, security, and digital banking.</p>
+          <a class="btn btn-outline" href="#faq">View FAQs</a>
+        </article>
+
+        <article class="card">
+          <span class="card-icon">C</span>
+          <h2>Contact support</h2>
+          <p>Send a message through the fictional support workflow for this demo.</p>
+          <a class="btn btn-primary" href="contact.html">Contact us</a>
+        </article>
+
+        <article class="card">
+          <span class="card-icon">S</span>
+          <h2>Security center</h2>
+          <p>Learn about safe digital banking practices and the security controls a production bank would require.</p>
+          <a class="btn btn-outline" href="#security">Security information</a>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section section-muted" id="faq">
+      <div class="container narrow">
+        <span class="eyebrow">FAQ</span>
+        <h2>Frequently asked questions</h2>
+
+        <div class="faq-list">
+          <details class="card">
+            <summary>Is Northstar Bank a real bank?</summary>
+            <p>No. Northstar Bank is a fictional frontend banking demonstration. It does not provide real banking services or process real transactions.</p>
+          </details>
+
+          <details class="card">
+            <summary>Can I create a real account?</summary>
+            <p>No. Registration is simulated locally in the demo and does not create a real financial account.</p>
+          </details>
+
+          <details class="card">
+            <summary>Are the demo login credentials real?</summary>
+            <p>No. The credentials supplied with this project are fictional demonstration credentials only.</p>
+          </details>
+
+          <details class="card">
+            <summary>How do I access the customer portal?</summary>
+            <p>Use the Sign in page and enter the fictional customer demo credentials provided with the project.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="security">
+      <div class="container split-layout">
+        <div>
+          <span class="eyebrow">Security</span>
+          <h2>Security is built into the demo experience.</h2>
+          <p>This frontend demonstrates interface patterns only. A production banking system would require secure backend authentication, authorization, encryption, session controls, MFA, rate limiting, fraud monitoring, audit logging, and regulatory controls.</p>
+        </div>
+
+        <div class="card">
+          <h3>Need more help?</h3>
+          <p>Use the fictional contact workflow to submit a support request.</p>
+          <a class="btn btn-primary" href="contact.html">Contact support</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Northstar Bank is a fictional frontend banking demonstration. No real financial transactions are processed.</p>
+    </div>
+  </footer>
+
+<script src="../assets/js/supabase-client.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/public.js"></script>
+</body>
+</html>

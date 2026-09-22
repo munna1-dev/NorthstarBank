@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Northstar Bank customer accounts">
+  <title>Accounts | Northstar Bank</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/customer.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrapper">
+    <a class="brand" href="dashboard.html" aria-label="Northstar Bank customer portal">
+      <span class="brand-mark">N</span>
+      <span>Northstar Bank</span>
+    </a>
+
+    <div class="nav-actions">
+      <span class="user-label">Alex Morgan</span>
+      <button class="btn btn-outline" type="button" data-logout>Sign out</button>
+    </div>
+  </div>
+</header>
+
+<div class="portal-layout">
+
+  <aside class="portal-sidebar">
+    <h2>Customer Portal</h2>
+
+    <nav class="portal-nav" aria-label="Customer navigation">
+      <a href="dashboard.html">Dashboard</a>
+      <a class="active" href="accounts.html">Accounts</a>
+      <a href="transactions.html">Transactions</a>
+      <a href="transfers.html">Transfers</a>
+      <a href="beneficiaries.html">Beneficiaries</a>
+      <a href="bills.html">Bill payments</a>
+      <a href="cards.html">Cards</a>
+      <a href="loans.html">Loans</a>
+      <a href="statements.html">Statements</a>
+      <a href="profile.html">Profile</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+  </aside>
+
+  <main class="portal-main">
+
+    <header class="portal-header">
+      <div>
+        <h1>Your accounts</h1>
+        <p>View balances and details for your fictional Northstar Bank accounts.</p>
+      </div>
+
+      <a class="btn btn-primary" href="transfers.html">Transfer money</a>
+    </header>
+
+    <section class="account-grid" id="account-list" aria-label="Customer accounts">
+      <!-- Accounts rendered by customer.js -->
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Account services</h2>
+
+        <div class="action-grid">
+
+          <a class="card action-card" href="transactions.html">
+            <span class="card-icon">T</span>
+            <h3>Transactions</h3>
+            <p>Review your recent fictional account activity.</p>
+          </a>
+
+          <a class="card action-card" href="transfers.html">
+            <span class="card-icon">↗</span>
+            <h3>Transfers</h3>
+            <p>Move demo funds between accounts or beneficiaries.</p>
+          </a>
+
+          <a class="card action-card" href="statements.html">
+            <span class="card-icon">S</span>
+            <h3>Statements</h3>
+            <p>View and export fictional account statements.</p>
+          </a>
+
+          <a class="card action-card" href="bills.html">
+            <span class="card-icon">B</span>
+            <h3>Bill payments</h3>
+            <p>Submit simulated payments to demo billers.</p>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <span class="eyebrow">Account information</span>
+        <h2>About your demo balances</h2>
+        <p>
+          Balances shown on this page come from local fictional data. They do not
+          represent real deposits, available funds, or financial obligations.
+        </p>
+        <p>
+          This interface does not connect to a banking core, payment network,
+          card processor, or real financial account.
+        </p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="../assets/js/supabase-client.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/customer.js"></script>
+</body>
+</html>

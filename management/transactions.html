@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Northstar Bank Management - Transactions</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/management.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="dashboard.html">
+    Northstar Bank Management
+  </a>
+
+  <nav aria-label="Management navigation">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="customers.html">Customers</a>
+    <a href="accounts.html">Accounts</a>
+    <a href="transactions.html" aria-current="page">Transactions</a>
+    <a href="transfers.html">Transfers</a>
+    <a href="cards.html">Cards</a>
+    <a href="loans.html">Loans</a>
+    <a href="support.html">Support</a>
+    <a href="reports.html">Reports</a>
+    <a href="audit-log.html">Audit Log</a>
+    <a href="settings.html">Settings</a>
+  </nav>
+
+  <button class="btn btn-outline" type="button" data-logout>
+    Sign out
+  </button>
+</header>
+
+<main class="page-shell">
+
+  <section class="page-heading">
+    <span class="eyebrow">Management Portal</span>
+    <h1>Transactions</h1>
+    <p>Review and manage transaction activity across Northstar Bank.</p>
+  </section>
+
+  <section class="card">
+
+    <div class="section-header">
+      <div>
+        <h2>Transaction Directory</h2>
+        <p>Search and filter fictional transaction records.</p>
+      </div>
+
+      <button
+        class="btn btn-outline"
+        type="button"
+        data-export-management="transactions"
+      >
+        Export CSV
+      </button>
+    </div>
+
+    <div class="form-grid">
+
+      <div class="form-group">
+        <label for="management-transaction-search">
+          Search
+        </label>
+
+        <input
+          id="management-transaction-search"
+          type="search"
+          placeholder="Search transaction, customer, account..."
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="management-transaction-status">
+          Status
+        </label>
+
+        <select id="management-transaction-status">
+          <option value="">All statuses</option>
+          <option value="Completed">Completed</option>
+          <option value="Pending">Pending</option>
+          <option value="Failed">Failed</option>
+          <option value="Reversed">Reversed</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="management-transaction-type">
+          Type
+        </label>
+
+        <select id="management-transaction-type">
+          <option value="">All types</option>
+          <option value="Credit">Credit</option>
+          <option value="Debit">Debit</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="management-transaction-sort">
+          Sort
+        </label>
+
+        <select id="management-transaction-sort">
+          <option value="date-desc">Newest first</option>
+          <option value="date-asc">Oldest first</option>
+          <option value="amount-desc">Largest amount</option>
+          <option value="amount-asc">Smallest amount</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Transaction</th>
+            <th>Customer</th>
+            <th>Account</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody id="management-transaction-list">
+        </tbody>
+      </table>
+    </div>
+
+    <p id="management-transaction-empty" hidden>
+      No transactions match the selected filters.
+    </p>
+
+  </section>
+
+</main>
+
+<script src="../assets/js/supabase-client.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/management.js"></script>
+
+</body>
+</html>

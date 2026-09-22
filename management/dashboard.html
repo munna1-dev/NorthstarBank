@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Northstar Bank management dashboard">
+  <title>Management Dashboard | Northstar Bank</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/management.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrapper">
+    <a class="brand" href="dashboard.html" aria-label="Northstar Bank management portal">
+      <span class="brand-mark">N</span>
+      <span>Northstar Bank</span>
+    </a>
+
+    <div class="nav-actions">
+      <span class="user-label">Management Staff</span>
+      <button class="btn btn-outline" type="button" data-logout>Sign out</button>
+    </div>
+  </div>
+</header>
+
+<div class="management-layout">
+
+  <aside class="management-sidebar" aria-label="Management portal navigation">
+    <h2>Management Portal</h2>
+
+    <nav class="management-nav">
+      <a class="active" href="dashboard.html">Dashboard</a>
+      <a href="customers.html">Customers</a>
+      <a href="accounts.html">Accounts</a>
+      <a href="transactions.html">Transactions</a>
+      <a href="transfers.html">Transfers</a>
+      <a href="cards.html">Cards</a>
+      <a href="loans.html">Loans</a>
+      <a href="support.html">Support</a>
+      <a href="reports.html">Reports</a>
+      <a href="audit-log.html">Audit Log</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+  </aside>
+
+  <main class="management-main">
+
+    <header class="management-header">
+      <div>
+        <h1>Management Dashboard</h1>
+        <p>Overview of Northstar Bank's fictional demo operations.</p>
+      </div>
+
+      <div class="management-actions">
+        <button class="btn btn-outline" type="button" data-refresh>
+          Refresh
+        </button>
+      </div>
+    </header>
+
+    <section class="management-metrics" aria-label="Management metrics">
+
+      <article class="management-metric">
+        <span class="metric-label muted">Total Customers</span>
+        <strong id="metric-customers">1,284</strong>
+        <span class="muted">Demo customer records</span>
+      </article>
+
+      <article class="management-metric">
+        <span class="metric-label muted">Active Accounts</span>
+        <strong id="metric-accounts">2,147</strong>
+        <span class="muted">Currently active</span>
+      </article>
+
+      <article class="management-metric">
+        <span class="metric-label muted">Pending Transfers</span>
+        <strong id="metric-transfers">17</strong>
+        <span class="muted">Require review</span>
+      </article>
+
+      <article class="management-metric">
+        <span class="metric-label muted">Open Support Cases</span>
+        <strong id="metric-support">23</strong>
+        <span class="muted">Demo cases</span>
+      </article>
+
+    </section>
+
+    <section class="management-grid">
+
+      <article class="card">
+        <span class="eyebrow">Deposits</span>
+        <h2>Total deposits</h2>
+        <p class="balance" id="total-deposits">$18,425,000.75</p>
+        <p class="muted">
+          Fictional aggregate balance for demonstration purposes.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="eyebrow">Loans</span>
+        <h2>Total loans</h2>
+        <p class="balance" id="total-loans">$6,425,000.50</p>
+        <p class="muted">
+          Fictional outstanding loan portfolio.
+        </p>
+      </article>
+
+      <article class="card management-grid-wide">
+        <div class="management-header">
+          <div>
+            <span class="eyebrow">Activity</span>
+            <h2>Transaction activity</h2>
+            <p>Illustrative transaction volume across recent periods.</p>
+          </div>
+        </div>
+
+        <div class="management-chart" aria-label="Illustrative transaction activity chart">
+          <div class="management-bar" style="--bar-height: 45%;">
+            <span>Mon</span>
+          </div>
+          <div class="management-bar" style="--bar-height: 65%;">
+            <span>Tue</span>
+          </div>
+          <div class="management-bar" style="--bar-height: 52%;">
+            <span>Wed</span>
+          </div>
+          <div class="management-bar" style="--bar-height: 78%;">
+            <span>Thu</span>
+          </div>
+          <div class="management-bar" style="--bar-height: 88%;">
+            <span>Fri</span>
+          </div>
+          <div class="management-bar" style="--bar-height: 60%;">
+            <span>Sat</span>
+          </div>
+          <div class="management-bar" style="--bar-height: 38%;">
+            <span>Sun</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="eyebrow">Attention</span>
+        <h2>Pending work</h2>
+
+        <div class="audit-event">
+          <strong>17 transfer reviews</strong>
+          <small>Pending demo transfer records</small>
+        </div>
+
+        <div class="audit-event">
+          <strong>23 support cases</strong>
+          <small>Open fictional customer cases</small>
+        </div>
+
+        <div class="audit-event">
+          <strong>8 loan applications</strong>
+          <small>Awaiting simulated review</small>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="eyebrow">System status</span>
+        <h2>Management notices</h2>
+
+        <div class="notice management-alert">
+          <strong>Demo environment</strong>
+          <p>
+            All records shown in this portal are fictional. No real banking
+            transactions or customer actions are performed.
+          </p>
+        </div>
+
+        <div class="management-actions">
+          <a class="btn btn-primary" href="audit-log.html">
+            View audit log
+          </a>
+          <a class="btn btn-outline" href="reports.html">
+            Open reports
+          </a>
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+</div>
+
+<script src="../assets/js/supabase-client.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/management.js"></script>
+
+</body>
+</html>

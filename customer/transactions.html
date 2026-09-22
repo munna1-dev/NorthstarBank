@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Northstar Bank customer transactions">
+  <title>Transactions | Northstar Bank</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/customer.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrapper">
+    <a class="brand" href="dashboard.html" aria-label="Northstar Bank customer portal">
+      <span class="brand-mark">N</span>
+      <span>Northstar Bank</span>
+    </a>
+
+    <div class="nav-actions">
+      <span class="user-label">Alex Morgan</span>
+      <button class="btn btn-outline" type="button" data-logout>Sign out</button>
+    </div>
+  </div>
+</header>
+
+<div class="portal-layout">
+
+  <aside class="portal-sidebar">
+    <h2>Customer Portal</h2>
+
+    <nav class="portal-nav" aria-label="Customer navigation">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="accounts.html">Accounts</a>
+      <a class="active" href="transactions.html">Transactions</a>
+      <a href="transfers.html">Transfers</a>
+      <a href="beneficiaries.html">Beneficiaries</a>
+      <a href="bills.html">Bill payments</a>
+      <a href="cards.html">Cards</a>
+      <a href="loans.html">Loans</a>
+      <a href="statements.html">Statements</a>
+      <a href="profile.html">Profile</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+  </aside>
+
+  <main class="portal-main">
+
+    <header class="portal-header">
+      <div>
+        <h1>Transactions</h1>
+        <p>Search and review your fictional account activity.</p>
+      </div>
+
+      <button class="btn btn-outline" type="button" id="export-csv">
+        Export CSV
+      </button>
+    </header>
+
+    <section class="card">
+
+      <div class="filters">
+
+        <div class="form-group">
+          <label for="transaction-search">Search</label>
+          <input
+            id="transaction-search"
+            type="search"
+            placeholder="Search description"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="transaction-date">Date</label>
+          <select id="transaction-date">
+            <option value="">All dates</option>
+            <option value="2026-09-20">Sep 20, 2026</option>
+            <option value="2026-09-19">Sep 19, 2026</option>
+            <option value="2026-09-18">Sep 18, 2026</option>
+            <option value="2026-09-17">Sep 17, 2026</option>
+            <option value="2026-09-15">Sep 15, 2026</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="transaction-category">Category</label>
+          <select id="transaction-category">
+            <option value="">All categories</option>
+            <option value="Income">Income</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Bills">Bills</option>
+            <option value="Food">Food</option>
+            <option value="Interest">Interest</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="transaction-status">Status</label>
+          <select id="transaction-status">
+            <option value="">All statuses</option>
+            <option value="Completed">Completed</option>
+            <option value="Pending">Pending</option>
+            <option value="Failed">Failed</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="table-scroll">
+        <table class="portal-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Category</th>
+              <th>Type</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+
+          <tbody id="transaction-list">
+            <!-- Transactions rendered by customer.js -->
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <div class="portal-header">
+          <div>
+            <h2>Pagination</h2>
+            <p>Demo pagination controls for a larger transaction history.</p>
+          </div>
+
+          <div class="form-actions">
+            <button
+              class="btn btn-outline"
+              type="button"
+              data-transaction-page="previous"
+              disabled
+            >
+              Previous
+            </button>
+            <button
+              class="btn btn-primary"
+              type="button"
+              data-transaction-page="current"
+            >
+              1
+            </button>
+            <button
+              class="btn btn-outline"
+              type="button"
+              data-transaction-page="next"
+            >
+              2
+            </button>
+            <button class="btn btn-outline" type="button">
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <span class="eyebrow">Demo notice</span>
+        <h2>Transaction data is fictional</h2>
+        <p>
+          The transactions shown here are local demonstration records.
+          Searching, filtering, exporting, and viewing these records does not
+          access a real banking system or process any financial transaction.
+        </p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="../assets/js/supabase-client.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/customer.js"></script>
+</body>
+</html>

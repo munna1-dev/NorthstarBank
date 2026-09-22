@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Northstar Bank Management - Reports</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/management.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="dashboard.html">
+    Northstar Bank Management
+  </a>
+
+  <nav aria-label="Management navigation">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="customers.html">Customers</a>
+    <a href="accounts.html">Accounts</a>
+    <a href="transactions.html">Transactions</a>
+    <a href="transfers.html">Transfers</a>
+    <a href="cards.html">Cards</a>
+    <a href="loans.html">Loans</a>
+    <a href="support.html">Support</a>
+    <a href="reports.html" aria-current="page">Reports</a>
+    <a href="audit-log.html">Audit Log</a>
+    <a href="settings.html">Settings</a>
+  </nav>
+
+  <button class="btn btn-outline" type="button" data-logout>
+    Sign out
+  </button>
+</header>
+
+<main class="page-shell">
+
+  <section class="page-heading">
+    <span class="eyebrow">Management Portal</span>
+    <h1>Reports</h1>
+    <p>Review operational summaries generated from the current demo data.</p>
+  </section>
+
+  <section class="card">
+    <div class="page-actions">
+      <button
+        class="btn btn-outline"
+        type="button"
+        data-refresh-reports
+      >
+        Refresh reports
+      </button>
+
+      <button
+        class="btn btn-primary"
+        type="button"
+        data-export-management="reports"
+      >
+        Export CSV
+      </button>
+    </div>
+  </section>
+
+  <section class="management-metrics">
+
+    <article class="management-metric">
+      <span class="metric-label">Total deposits</span>
+      <strong id="report-total-deposits">$0.00</strong>
+    </article>
+
+    <article class="management-metric">
+      <span class="metric-label">Total loans</span>
+      <strong id="report-total-loans">$0.00</strong>
+    </article>
+
+    <article class="management-metric">
+      <span class="metric-label">Transactions</span>
+      <strong id="report-transaction-count">0</strong>
+    </article>
+
+    <article class="management-metric">
+      <span class="metric-label">Transfer volume</span>
+      <strong id="report-transfer-volume">$0.00</strong>
+    </article>
+
+    <article class="management-metric">
+      <span class="metric-label">Open support cases</span>
+      <strong id="report-open-support">0</strong>
+    </article>
+
+    <article class="management-metric">
+      <span class="metric-label">Active cards</span>
+      <strong id="report-active-cards">0</strong>
+    </article>
+
+  </section>
+
+  <section class="card report-card">
+    <div class="page-heading">
+      <span class="eyebrow">Transactions</span>
+      <h2>Transaction summary</h2>
+    </div>
+
+    <div class="management-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Count</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="report-transaction-summary"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card report-card">
+    <div class="page-heading">
+      <span class="eyebrow">Transfers</span>
+      <h2>Transfer status</h2>
+    </div>
+
+    <div class="management-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Status</th>
+            <th>Count</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody id="report-transfer-summary"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card report-card">
+    <div class="page-heading">
+      <span class="eyebrow">Support</span>
+      <h2>Support case status</h2>
+    </div>
+
+    <div class="management-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Status</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+        <tbody id="report-support-summary"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card report-card">
+    <div class="page-heading">
+      <span class="eyebrow">Transactions</span>
+      <h2>Spending categories</h2>
+    </div>
+
+    <div class="management-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Transactions</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="report-category-summary"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <p id="report-empty" class="notice" hidden>
+    No report data is currently available.
+  </p>
+
+</main>
+
+<script src="../assets/js/supabase-client.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/management.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Northstar Bank management customer administration">
+  <title>Customers | Northstar Bank</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/management.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrapper">
+    <a class="brand" href="dashboard.html" aria-label="Northstar Bank management portal">
+      <span class="brand-mark">N</span>
+      <span>Northstar Bank</span>
+    </a>
+
+    <div class="nav-actions">
+      <span class="user-label">Management Staff</span>
+      <button class="btn btn-outline" type="button" data-logout>
+        Sign out
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="management-layout">
+
+  <aside class="management-sidebar" aria-label="Management portal navigation">
+    <h2>Management Portal</h2>
+
+    <nav class="management-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a class="active" href="customers.html">Customers</a>
+      <a href="accounts.html">Accounts</a>
+      <a href="transactions.html">Transactions</a>
+      <a href="transfers.html">Transfers</a>
+      <a href="cards.html">Cards</a>
+      <a href="loans.html">Loans</a>
+      <a href="support.html">Support</a>
+      <a href="reports.html">Reports</a>
+      <a href="audit-log.html">Audit Log</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+  </aside>
+
+  <main class="management-main">
+
+    <header class="management-header">
+      <div>
+        <h1>Customers</h1>
+        <p>
+          Review fictional customer records and account relationships.
+        </p>
+      </div>
+
+      <div class="management-actions">
+        <button class="btn btn-primary" type="button"
+          data-management-action="add-customer">
+          Add customer
+        </button>
+      </div>
+    </header>
+
+    <section class="card">
+      <span class="eyebrow">Customer directory</span>
+      <h2>Customer records</h2>
+
+      <div class="management-filters">
+
+        <div class="form-group">
+          <label for="customer-search">Search</label>
+          <input
+            id="customer-search"
+            type="search"
+            placeholder="Name, email, or customer ID"
+            data-management-search="#management-customer-list"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="customer-status">Status</label>
+          <select id="customer-status">
+            <option value="">All statuses</option>
+            <option value="Active">Active</option>
+            <option value="Review">Review</option>
+            <option value="Suspended">Suspended</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="customer-type">Customer type</label>
+          <select id="customer-type">
+            <option value="">All types</option>
+            <option value="Personal">Personal</option>
+            <option value="Business">Business</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="customer-sort">Sort by</label>
+          <select id="customer-sort">
+            <option value="name">Name</option>
+            <option value="id">Customer ID</option>
+            <option value="accounts">Accounts</option>
+            <option value="status">Status</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="table-responsive">
+        <table class="management-table">
+          <thead>
+            <tr>
+              <th scope="col">Customer ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Type</th>
+              <th scope="col">Accounts</th>
+              <th scope="col">Status</th>
+              <th scope="col">Joined</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+
+          <tbody id="management-customer-list">
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="management-grid">
+
+      <article class="card">
+        <span class="eyebrow">Customer summary</span>
+        <h2>Directory status</h2>
+
+        <div class="audit-event">
+          <strong>1,284 customer records</strong>
+          <small>Fictional management dataset</small>
+        </div>
+
+        <div class="audit-event">
+          <strong>Active profiles</strong>
+          <small>Customer access currently enabled in demo data</small>
+        </div>
+
+        <div class="audit-event">
+          <strong>Review queue</strong>
+          <small>Records requiring simulated staff review</small>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="eyebrow">Demo controls</span>
+        <h2>Customer actions</h2>
+
+        <p class="muted">
+          Actions on this page are simulated and do not modify real customer
+          records.
+        </p>
+
+        <div class="management-actions">
+          <button
+            class="btn btn-outline"
+            type="button"
+            data-management-action="export-customers"
+          >
+            Export
+          </button>
+
+          <button
+            class="btn btn-outline"
+            type="button"
+            data-management-action="review-customer-queue"
+          >
+            Review queue
+          </button>
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+</div>
+
+<script src="../assets/js/supabase-client.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/management.js"></script>
+
+</body>
+</html>

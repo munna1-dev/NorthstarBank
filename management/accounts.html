@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Northstar Bank management account administration">
+  <title>Accounts | Northstar Bank</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/management.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrapper">
+    <a class="brand" href="dashboard.html" aria-label="Northstar Bank management portal">
+      <span class="brand-mark">N</span>
+      <span>Northstar Bank</span>
+    </a>
+
+    <div class="nav-actions">
+      <span class="user-label">Management Staff</span>
+      <button class="btn btn-outline" type="button" data-logout>
+        Sign out
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="management-layout">
+
+  <aside class="management-sidebar" aria-label="Management portal navigation">
+    <h2>Management Portal</h2>
+
+    <nav class="management-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="customers.html">Customers</a>
+      <a class="active" href="accounts.html">Accounts</a>
+      <a href="transactions.html">Transactions</a>
+      <a href="transfers.html">Transfers</a>
+      <a href="cards.html">Cards</a>
+      <a href="loans.html">Loans</a>
+      <a href="support.html">Support</a>
+      <a href="reports.html">Reports</a>
+      <a href="audit-log.html">Audit Log</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+  </aside>
+
+  <main class="management-main">
+
+    <header class="management-header">
+      <div>
+        <h1>Accounts</h1>
+        <p>
+          Review fictional customer accounts and account status information.
+        </p>
+      </div>
+
+      <div class="management-actions">
+        <button
+          class="btn btn-primary"
+          type="button"
+          data-management-action="create-account"
+        >
+          Create account
+        </button>
+      </div>
+    </header>
+
+    <section class="card">
+      <span class="eyebrow">Account directory</span>
+      <h2>Customer accounts</h2>
+
+      <div class="management-filters">
+
+        <div class="form-group">
+          <label for="account-search">Search</label>
+          <input
+            id="account-search"
+            type="search"
+            placeholder="Account ID, customer, or account number"
+            data-management-search="#management-account-list"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="account-type">Account type</label>
+          <select id="account-type">
+            <option value="">All account types</option>
+            <option value="Checking">Checking</option>
+            <option value="Savings">Savings</option>
+            <option value="Business">Business</option>
+            <option value="Credit">Credit</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="account-status">Status</label>
+          <select id="account-status">
+            <option value="">All statuses</option>
+            <option value="Active">Active</option>
+            <option value="Pending">Pending</option>
+            <option value="Suspended">Suspended</option>
+            <option value="Closed">Closed</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="account-sort">Sort by</label>
+          <select id="account-sort">
+            <option value="account-id">Account ID</option>
+            <option value="customer">Customer</option>
+            <option value="type">Account type</option>
+            <option value="balance">Balance</option>
+            <option value="status">Status</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="table-responsive">
+        <table class="management-table">
+          <thead>
+            <tr>
+              <th scope="col">Account ID</th>
+              <th scope="col">Customer</th>
+              <th scope="col">Account type</th>
+              <th scope="col">Account number</th>
+              <th scope="col">Balance</th>
+              <th scope="col">Currency</th>
+              <th scope="col">Status</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+
+          <tbody id="management-account-list">
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="management-grid">
+
+      <article class="card">
+        <span class="eyebrow">Account summary</span>
+        <h2>Directory status</h2>
+
+        <div class="audit-event">
+          <strong>2,147 active accounts</strong>
+          <small>Fictional aggregate management metric</small>
+        </div>
+
+        <div class="audit-event">
+          <strong>Multiple account types</strong>
+          <small>Checking, savings, business and credit records</small>
+        </div>
+
+        <div class="audit-event">
+          <strong>Masked account numbers</strong>
+          <small>Full account numbers are never displayed</small>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="eyebrow">Demo controls</span>
+        <h2>Account actions</h2>
+
+        <p class="muted">
+          Account actions are simulated. No real banking account is created,
+          modified, suspended, or closed.
+        </p>
+
+        <div class="management-actions">
+          <button
+            class="btn btn-outline"
+            type="button"
+            data-management-action="export-accounts"
+          >
+            Export
+          </button>
+
+          <button
+            class="btn btn-outline"
+            type="button"
+            data-management-action="review-account-statuses"
+          >
+            Review statuses
+          </button>
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+</div>
+
+<script src="../assets/js/supabase-client.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/management.js"></script>
+
+</body>
+</html>

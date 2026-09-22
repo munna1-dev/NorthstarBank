@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Northstar Bank customer security settings">
+  <title>Settings | Northstar Bank</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/customer.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrapper">
+    <a class="brand" href="dashboard.html" aria-label="Northstar Bank customer portal">
+      <span class="brand-mark">N</span>
+      <span>Northstar Bank</span>
+    </a>
+
+    <div class="nav-actions">
+      <span class="user-label">Alex Morgan</span>
+      <button class="btn btn-outline" type="button" data-logout>Sign out</button>
+    </div>
+  </div>
+</header>
+
+<div class="portal-layout">
+
+  <aside class="portal-sidebar" aria-label="Customer portal navigation">
+    <h2>Customer Portal</h2>
+
+    <nav class="portal-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="accounts.html">Accounts</a>
+      <a href="transactions.html">Transactions</a>
+      <a href="transfers.html">Transfers</a>
+      <a href="beneficiaries.html">Beneficiaries</a>
+      <a href="bills.html">Bill Payments</a>
+      <a href="cards.html">Cards</a>
+      <a href="loans.html">Loans</a>
+      <a href="statements.html">Statements</a>
+      <a href="profile.html">Profile</a>
+      <a class="active" href="settings.html">Settings</a>
+    </nav>
+  </aside>
+
+  <main class="portal-main">
+
+    <header class="portal-header">
+      <div>
+        <h1>Settings</h1>
+        <p>Manage fictional security, notification, and display preferences.</p>
+      </div>
+    </header>
+
+    <section class="card">
+
+      <span class="eyebrow">Security</span>
+      <h2>Account security</h2>
+
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label for="two-factor">Two-factor authentication</label>
+          <select id="two-factor">
+            <option>Enabled</option>
+            <option>Disabled</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="login-alerts">Login alerts</label>
+          <select id="login-alerts">
+            <option>Enabled</option>
+            <option>Disabled</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="session-timeout">Session timeout</label>
+          <select id="session-timeout">
+            <option>15 minutes</option>
+            <option>30 minutes</option>
+            <option>60 minutes</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="form-actions">
+        <button class="btn btn-primary" type="button" id="save-security-settings">
+          Save demo security settings
+        </button>
+      </div>
+
+    </section>
+
+    <section class="section">
+
+      <div class="card">
+
+        <span class="eyebrow">Notifications</span>
+        <h2>Notification preferences</h2>
+
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="transaction-alerts">Transaction alerts</label>
+            <select id="transaction-alerts">
+              <option>Enabled</option>
+              <option>Disabled</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="transfer-alerts">Transfer alerts</label>
+            <select id="transfer-alerts">
+              <option>Enabled</option>
+              <option>Disabled</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="statement-alerts">Statement alerts</label>
+            <select id="statement-alerts">
+              <option>Enabled</option>
+              <option>Disabled</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="marketing-alerts">Product and service updates</label>
+            <select id="marketing-alerts">
+              <option>Disabled</option>
+              <option>Enabled</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-outline" type="button" id="save-notification-settings">
+            Save demo notifications
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section">
+
+      <div class="card">
+
+        <span class="eyebrow">Display</span>
+        <h2>Portal preferences</h2>
+
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="currency-display">Currency display</label>
+            <select id="currency-display">
+              <option>USD ($)</option>
+              <option>EUR (€)</option>
+              <option>GBP (£)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="date-format">Date format</label>
+            <select id="date-format">
+              <option>MM/DD/YYYY</option>
+              <option>DD/MM/YYYY</option>
+              <option>YYYY-MM-DD</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-outline" type="button" id="save-display-settings">
+            Save demo display settings
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section">
+
+      <div class="card">
+
+        <span class="eyebrow">Demo security notice</span>
+        <h2>Important information</h2>
+
+        <ul class="feature-list">
+          <li>These settings are frontend demonstration controls.</li>
+          <li>No real authentication or security policy is changed.</li>
+          <li>No passwords, tokens, or financial credentials are stored here.</li>
+          <li>Production systems require secure backend session management, MFA, authorization, encryption, monitoring, and audit controls.</li>
+        </ul>
+
+      </div>
+
+    </section>
+
+  </main>
+</div>
+
+<script src="../assets/js/supabase-client.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/customer.js"></script>
+
+</body>
+</html>

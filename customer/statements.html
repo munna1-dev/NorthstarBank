@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Northstar Bank customer statements">
+  <title>Statements | Northstar Bank</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/customer.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrapper">
+    <a class="brand" href="dashboard.html" aria-label="Northstar Bank customer portal">
+      <span class="brand-mark">N</span>
+      <span>Northstar Bank</span>
+    </a>
+
+    <div class="nav-actions">
+      <span class="user-label">Alex Morgan</span>
+      <button class="btn btn-outline" type="button" data-logout>Sign out</button>
+    </div>
+  </div>
+</header>
+
+<div class="portal-layout">
+
+  <aside class="portal-sidebar" aria-label="Customer portal navigation">
+    <h2>Customer Portal</h2>
+
+    <nav class="portal-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="accounts.html">Accounts</a>
+      <a href="transactions.html">Transactions</a>
+      <a href="transfers.html">Transfers</a>
+      <a href="beneficiaries.html">Beneficiaries</a>
+      <a href="bills.html">Bill Payments</a>
+      <a href="cards.html">Cards</a>
+      <a href="loans.html">Loans</a>
+      <a class="active" href="statements.html">Statements</a>
+      <a href="profile.html">Profile</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+  </aside>
+
+  <main class="portal-main">
+
+    <header class="portal-header">
+      <div>
+        <h1>Statements</h1>
+        <p>View and export fictional account statements.</p>
+      </div>
+    </header>
+
+    <section class="card-grid">
+
+      <article class="card">
+        <span class="eyebrow">Checking account</span>
+        <h2>Everyday Checking</h2>
+        <p class="account-number">****4821</p>
+
+        <div class="metric-grid">
+          <div class="metric">
+            <span class="metric-label">Statement period</span>
+            <strong>Sep 2026</strong>
+          </div>
+
+          <div class="metric">
+            <span class="metric-label">Ending balance</span>
+            <strong>$4,280.75</strong>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-primary" type="button" data-print>
+            Print statement
+          </button>
+          <button class="btn btn-outline" type="button" id="export-statement-csv">
+            Export CSV
+          </button>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="eyebrow">Savings account</span>
+        <h2>High-Yield Savings</h2>
+        <p class="account-number">****9137</p>
+
+        <div class="metric-grid">
+          <div class="metric">
+            <span class="metric-label">Statement period</span>
+            <strong>Sep 2026</strong>
+          </div>
+
+          <div class="metric">
+            <span class="metric-label">Ending balance</span>
+            <strong>$12,650.40</strong>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-primary" type="button" data-print>
+            Print statement
+          </button>
+          <button class="btn btn-outline" type="button" id="export-savings-csv">
+            Export CSV
+          </button>
+        </div>
+      </article>
+
+    </section>
+
+    <section class="section">
+
+      <div class="card">
+        <span class="eyebrow">Statement history</span>
+        <h2>Available statements</h2>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Account</th>
+                <th>Period</th>
+                <th>Ending balance</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Everyday Checking ****4821</td>
+                <td>September 2026</td>
+                <td>$4,280.75</td>
+                <td>
+                  <span class="status status-success">Available</span>
+                </td>
+                <td>
+                  <button class="btn btn-outline" type="button" data-print>
+                    Print
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>High-Yield Savings ****9137</td>
+                <td>September 2026</td>
+                <td>$12,650.40</td>
+                <td>
+                  <span class="status status-success">Available</span>
+                </td>
+                <td>
+                  <button class="btn btn-outline" type="button" data-print>
+                    Print
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Everyday Checking ****4821</td>
+                <td>August 2026</td>
+                <td>$3,925.60</td>
+                <td>
+                  <span class="status status-success">Available</span>
+                </td>
+                <td>
+                  <button class="btn btn-outline" type="button" data-print>
+                    Print
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="section">
+
+      <div class="card">
+        <span class="eyebrow">Demo notice</span>
+        <h2>Fictional statements</h2>
+        <p>
+          Statement information on this page is fictional demonstration data.
+          Print and export functions are frontend-only and do not retrieve
+          statements from a real financial institution.
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+</div>
+
+<script src="../assets/js/supabase-client.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/customer.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Northstar Bank customer beneficiaries">
+  <title>Beneficiaries | Northstar Bank</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/customer.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrapper">
+    <a class="brand" href="dashboard.html" aria-label="Northstar Bank customer portal">
+      <span class="brand-mark">N</span>
+      <span>Northstar Bank</span>
+    </a>
+
+    <div class="nav-actions">
+      <span class="user-label">Alex Morgan</span>
+      <button class="btn btn-outline" type="button" data-logout>Sign out</button>
+    </div>
+  </div>
+</header>
+
+<div class="portal-layout">
+
+  <aside class="portal-sidebar" aria-label="Customer portal navigation">
+    <h2>Customer Portal</h2>
+
+    <nav class="portal-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="accounts.html">Accounts</a>
+      <a href="transactions.html">Transactions</a>
+      <a href="transfers.html">Transfers</a>
+      <a class="active" href="beneficiaries.html">Beneficiaries</a>
+      <a href="bills.html">Bill Payments</a>
+      <a href="cards.html">Cards</a>
+      <a href="loans.html">Loans</a>
+      <a href="statements.html">Statements</a>
+      <a href="profile.html">Profile</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+  </aside>
+
+  <main class="portal-main">
+
+    <header class="portal-header">
+      <div>
+        <h1>Beneficiaries</h1>
+        <p>Manage fictional recipients used by the transfer demo.</p>
+      </div>
+
+      <a class="btn btn-primary" href="transfers.html">
+        Make a transfer
+      </a>
+    </header>
+
+    <section class="card-grid">
+
+      <article class="card">
+        <span class="eyebrow">Northstar Bank</span>
+        <h2>Jordan Lee</h2>
+        <p>Account ending in 7712</p>
+        <p class="muted">Domestic demo beneficiary</p>
+
+        <div class="form-actions">
+          <button
+            class="btn btn-outline"
+            type="button"
+            data-beneficiary-action="edit"
+            data-beneficiary-name="Jordan Lee"
+          >
+            Edit
+          </button>
+          <button
+            class="btn btn-outline"
+            type="button"
+            data-beneficiary-action="remove"
+            data-beneficiary-name="Jordan Lee"
+          >
+            Remove
+          </button>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="eyebrow">Harbor Federal</span>
+        <h2>Taylor Smith</h2>
+        <p>Account ending in 2284</p>
+        <p class="muted">External demo beneficiary</p>
+
+        <div class="form-actions">
+          <button
+            class="btn btn-outline"
+            type="button"
+            data-beneficiary-action="edit"
+            data-beneficiary-name="Taylor Smith"
+          >
+            Edit
+          </button>
+          <button
+            class="btn btn-outline"
+            type="button"
+            data-beneficiary-action="remove"
+            data-beneficiary-name="Taylor Smith"
+          >
+            Remove
+          </button>
+        </div>
+      </article>
+
+    </section>
+
+    <section class="section">
+
+      <div class="card">
+        <span class="eyebrow">Add beneficiary</span>
+        <h2>New beneficiary</h2>
+        <p class="muted">
+          Adding a beneficiary is simulated and does not create a real payment recipient.
+        </p>
+
+        <form id="beneficiary-form" class="form-grid">
+
+          <div class="form-group">
+            <label for="beneficiary-name">Full name</label>
+            <input
+              id="beneficiary-name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="beneficiary-bank">Bank</label>
+            <input
+              id="beneficiary-bank"
+              name="bank"
+              type="text"
+              placeholder="Bank name"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="beneficiary-account">Account number</label>
+            <input
+              id="beneficiary-account"
+              name="account"
+              type="text"
+              inputmode="numeric"
+              minlength="4"
+              maxlength="34"
+              placeholder="Demo account number"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="beneficiary-reference">Reference</label>
+            <input
+              id="beneficiary-reference"
+              name="reference"
+              type="text"
+              maxlength="80"
+              placeholder="Optional reference"
+            >
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">
+              Add demo beneficiary
+            </button>
+            <a class="btn btn-outline" href="transfers.html">
+              Cancel
+            </a>
+          </div>
+
+        </form>
+      </div>
+
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <span class="eyebrow">Security notice</span>
+        <h2>Demo beneficiary controls</h2>
+        <p>
+          This frontend does not store or transmit real beneficiary banking
+          information. A production banking system would require authenticated
+          server-side beneficiary management, verification, authorization,
+          audit logging, fraud controls, and secure transaction approval.
+        </p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="../assets/js/supabase-client.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/customer.js"></script>
+
+</body>
+</html>

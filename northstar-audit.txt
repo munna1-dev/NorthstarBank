@@ -1,0 +1,49 @@
+NORTHSTAR BANK AUDIT
+DATE: Tue Sep 22 06:08:26 EDT 2026
+
+=== FILES ===
+./assets/css/customer.css
+./assets/css/main.css
+./assets/css/management.css
+./assets/css/public.css
+./assets/js/app.js
+./assets/js/customer.js
+./assets/js/management.js
+./assets/js/mock-data.js
+./assets/js/public.js
+./customer/accounts.html
+./customer/beneficiaries.html
+./customer/bills.html
+./customer/cards.html
+./customer/dashboard.html
+./customer/loans.html
+./customer/profile.html
+./customer/settings.html
+./customer/statements.html
+./customer/transactions.html
+./customer/transfers.html
+./index.html
+./management/accounts.html
+./management/customers.html
+./management/dashboard.html
+./northstar-audit.txt
+./public/accounts.html
+./public/cards.html
+./public/contact.html
+./public/loans.html
+./public/login.html
+./public/register.html
+./public/support.html
+
+=== JAVASCRIPT CHECK ===
+PASS ./assets/js/mock-data.js
+PASS ./assets/js/app.js
+PASS ./assets/js/public.js
+PASS ./assets/js/customer.js
+PASS ./assets/js/management.js
+
+=== AUTHENTICATION ===
+
+=== API / SUPABASE ===
+
+=== GIT ===
