@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Open a Northstar Bank account">
+  <title>Open an Account | Northstar Bank</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/public.css">
+</head>
+<body class="public-page">
+
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a class="brand" href="../index.html" aria-label="Northstar Bank home">
+        <span class="brand-mark">N</span>
+        <span>Northstar Bank</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="accounts.html">Accounts</a>
+        <a href="cards.html">Cards</a>
+        <a href="loans.html">Loans</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container narrow">
+        <div class="section-heading">
+          <span class="eyebrow">GET STARTED</span>
+          <h1>Open a Northstar Bank account</h1>
+          <p>Create a customer account using Supabase Authentication.</p>
+        </div>
+
+        <div class="card">
+          <form id="registration-form">
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="first-name">First name</label>
+                <input id="first-name" name="firstName" type="text" required>
+              </div>
+
+              <div class="form-group">
+                <label for="last-name">Last name</label>
+                <input id="last-name" name="lastName" type="text" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="register-email">Email address</label>
+              <input id="register-email" name="email" type="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone number</label>
+              <input id="phone" name="phone" type="tel" required>
+            </div>
+
+            <div class="form-group">
+              <label for="account-type">Account type</label>
+              <select id="account-type" name="accountType" required>
+                <option value="">Select an account type</option>
+                <option value="checking">Checking</option>
+                <option value="savings">Savings</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="register-password">Create password</label>
+              <div class="input-with-action">
+                <input id="register-password" name="password" type="password" minlength="8" required>
+                <button class="input-action" type="button" data-toggle-password="register-password">Show</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" required>
+                <span>I understand this is a fictional banking demonstration.</span>
+              </label>
+            </div>
+
+            <button class="btn btn-primary btn-block" type="submit">
+              Continue
+            </button>
+
+            <p class="form-note">
+              Already have an account?
+              <a href="login.html">Sign in</a>
+            </p>
+
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Northstar Bank is a fictional banking demonstration. Do not use real banking credentials.</p>
+    </div>
+  </footer>
+
+<script src="../assets/js/supabase-client.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/supabase.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/public.js"></script>
+</body>
+</html>

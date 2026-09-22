@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Northstar Bank secure sign in">
+  <title>Sign In | Northstar Bank</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/public.css">
+</head>
+<body class="public-page">
+
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a class="brand" href="../index.html" aria-label="Northstar Bank home">
+        <span class="brand-mark">N</span>
+        <span>Northstar Bank</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="accounts.html">Accounts</a>
+        <a href="cards.html">Cards</a>
+        <a href="loans.html">Loans</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container auth-layout">
+
+        <div class="auth-card">
+          <div class="section-heading">
+            <span class="eyebrow">SECURE ACCESS</span>
+            <h1>Sign in to Northstar Bank</h1>
+            <p>Sign in with your Northstar Bank account credentials.</p>
+          </div>
+
+          <form id="login-form" novalidate>
+
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="username"
+                placeholder="you@example.test"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <div class="password-field">
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autocomplete="current-password"
+                  placeholder="Enter your password"
+                  required
+                >
+                <button
+                  type="button"
+                  class="btn btn-outline btn-small"
+                  data-toggle-password="password"
+                  aria-label="Show password"
+                >Show</button>
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-block" type="submit">
+              Sign in
+            </button>
+
+          </form>
+
+          <div class="alert alert-info">
+            <strong>Account access</strong>
+            <p>
+              This demonstration uses Supabase Authentication.
+              If your account requires email confirmation, confirm your
+              email address before signing in.
+            </p>
+          </div>
+
+          <p class="muted">
+            This is a fictional banking demonstration. Do not enter real
+            banking credentials or financial information.
+          </p>
+
+          <p>
+            New to Northstar Bank?
+            <a href="register.html">Open an account</a>
+          </p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Northstar Bank is a fictional frontend banking demonstration.</p>
+    </div>
+  </footer>
+
+<script src="../assets/js/supabase-client.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/supabase.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/public.js"></script>
+</body>
+</html>
