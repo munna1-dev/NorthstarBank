@@ -191,6 +191,69 @@ app.get('/api/customer/transactions/:accountNumber', authenticateToken, (req, re
 });
 
 const PORT = 5000;
+
+// Customer Registration Route (Requires Admin Approval)
+app.post('/api/auth/register', (req, res) => {
+  const { email, password, firstName, middleName, lastName, profilePic } = req.body;
+  if (!email || !password || !firstName || !lastName) {
+    return res.status(400).json({ error: "Missing required registration fields." });
+  }
+
+  try {
+    const bcrypt = require("bcryptjs");
+    const hashedPassword = bcrypt.hashSync(password, 10);
+    
+    const checkStmt = db.prepare("SELECT id FROM users WHERE email = :email");
+    const existing = checkStmt.getAsObject({ ':email': email });
+    checkStmt.free();
+
+    if (existing && existing.id) {
+      return res.status(400).json({ error: "Email already registered." });
+    }
+
+    db.run(
+      "INSERT INTO users (email, password, first_name, middle_name, last_name, profile_pic, is_approved) VALUES (?, ?, ?, ?, ?, ?, 0)",
+      [email, hashedPassword, firstName, middleName || "", lastName, profilePic || "https://api.dicebear.com/7.x/avataaars/svg?seed=" + email]
+    );
+
+    const userStmt = db.prepare("SELECT id FROM users WHERE email = :email");
+    const newUser = userStmt.getAsObject({ ':email': email });
+    userStmt.free();
+
+    const accountNumber = "88" + Math.floor(10000000 + Math.random() * 90000000);
+    const routingNumber = "0210" + Math.floor(1000 + Math.random() * 9000);
+
+    db.run(
+      "INSERT INTO accounts (user_id, account_number, routing_number, balance) VALUES (?, ?, ?, ?)",
+      [newUser.id, accountNumber, routingNumber, 0.00]
+    );
+
+    const DB_FILE = require("path").join(__dirname, "database.sqlite");
+    fs.writeFileSync(DB_FILE, Buffer.from(db.export()));
+
+    return res.status(201).json({ message: "Registration successful. Account pending administrator approval." });
+  } catch (e) {
+    return res.status(500).json({ error: e.message });
+  }
+});
+
+// Admin Approval Route
+app.post('/api/admin/approve-user', authenticateAdmin, (req, res) => {
+  const { userId } = req.body;
+  if (!userId) {
+    return res.status(400).json({ error: "Missing userId" });
+  }
+  try {
+    db.run("UPDATE users SET is_approved = 1 WHERE id = ?", [userId]);
+    const DB_FILE = require("path").join(__dirname, "database.sqlite");
+    fs.writeFileSync(DB_FILE, Buffer.from(db.export()));
+    return res.json({ message: "User account successfully approved by Administrator." });
+  } catch (e) {
+    return res.status(500).json({ error: e.message });
+  }
+});
+
+
 app.listen(PORT, '127.0.0.1', () => {
   console.log(`NorthstarBank Backend running on http://127.0.0.1:${PORT}`);
 });
